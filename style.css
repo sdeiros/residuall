@@ -1,0 +1,1019 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    
+}
+
+header{
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 200px;
+    transition: 0.5s ease;
+}
+
+header .brand{
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+header .brand:hover{
+    color: #09a6d4;
+}
+
+header .navigation{
+    position: relative;
+}
+
+header .navigation .navigation-items a{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 30px;
+    transition: 0.3s ease;
+}
+
+header .navigation .navigation-items a:before{
+    content: '';
+    position: absolute;
+    background: #fff;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s ease;
+}
+
+header .navigation .navigation-items a:hover:before{
+    width: 100%;
+    background: #09a6d4;
+}
+
+section{
+    padding: 100px 200px;
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: rgba(0, 140, 255, 0.959);
+}
+
+.home:before{
+    z-index: 777;
+    content: '';
+    position: absolute;
+    background: rgba(251, 3, 3, 0.034);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.home .content{
+    z-index: 888;
+    color: #fff;
+    width: 70%;
+    margin-top: 50px;
+    display: none;
+}
+
+.home .content.active{
+    display: block;
+}
+
+.home .content h1{
+    font-size: 4em;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 75px;
+    margin-bottom: 40px;
+}
+
+.home .content h1 span{
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.home .content p{
+    margin-bottom: 65px;
+}
+
+.home .content a{
+    background: #fff;
+    padding: 15px 35px;
+    color: #09a6d4;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+.home .content a:hover{
+    background: #09a6d4;
+    color: #fff;
+}
+
+.home .media-icons{
+    z-index: 888;
+    position: absolute;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease;
+}
+
+.home .media-icons a{
+    color: #fff;
+    font-size: 1.6em;
+    transition: 0.3s ease;
+}
+
+.home .media-icons a:not(:last-child){
+    margin-bottom: 20px;
+}
+
+.home .media-icons a:hover{
+    transform: scale(1.3);
+    color: #09a6d4;
+}
+
+.home img{
+    z-index: 000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider-navigation{
+    z-index: 888;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(80px);
+    margin-bottom: 12px;
+}
+
+.slider-navigation .nav-btn{
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+    transition: 0.3s ease;
+}
+
+.slider-navigation .nav-btn.active{
+    background: #09a6d4;
+}
+
+.slider-navigation .nav-btn:not(:last-child){
+    margin-right: 20px;
+}
+
+.slider-navigation .nav-btn:hover{
+    transform: scale(1.2);
+}
+
+.img-slide{
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+}
+
+.img-slide.active{
+    clip-path: circle(150% at 0 50%);
+    transition: 2s ease;
+    transition-property: clip-path;
+}
+
+@media (max-width: 1040px){
+    header{
+        padding: 12px 20px;
+    }
+    section{
+        padding: 100px 20px;
+    }
+    .home .media-icons{
+        right: 15px;
+    }
+    header .navigation{
+        display: none;
+    }
+    header .navigation.active{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(1, 1, 1, 0.5);
+    }
+
+    header .navigation .navigation-items a{
+        color: #222;
+        font-size: 1.2em;
+        margin: 20px;
+    }
+    header .navigation .navigation-items a:before{
+        background: #222;
+        height: 5px;
+    }
+    header .navigation .navigation-items{
+        background: #fff;
+        width: 600px;
+        max-width: 600px;
+        margin: 20px;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 5px;
+        box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
+    }
+    .menu-btn{
+        background: url(menu.png)no-repeat;
+        background-size: 30px;
+        background-position: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+    .menu-btn.active{
+        z-index: 999;
+        background: url(close.png)no-repeat;
+        background-size: 25px;
+        background-position: center;
+        transition: 0.3s ease;
+    }
+}
+
+@media (max-width: 560px){
+    .home .content h1{
+        font-size: 3em;
+        line-height: 60px;
+    }
+}
+
+/* borda */
+.recycling-container {
+    border: 10px solid #transparent; /* Define a largura, estilo e cor da borda do elemento */
+    padding: 100px; /* Define o preenchimento interno do elemento como 100 pixels */
+    border-radius: 50px; /* Define o raio das bordas do elemento como 50 pixels, criando uma forma arredondada */
+    background-image: url(reciclagem.png); /* Define a imagem de fundo do elemento */
+    background-size: cover; /* Redimensiona a imagem de fundo para cobrir todo o container */
+}
+
+h2 {
+    font-size: 40px; /* Define o tamanho da fonte como 40 pixels */
+    color: #FFFFFF; /* Define a cor do texto como #FFFFFF (branco) */
+    margin-bottom: 10px; /* Define uma margem inferior de 10 pixels */
+}
+
+p {
+    font-size: 18px; /* Define o tamanho da fonte como 18 pixels */
+    color: #FFFFFF; /* Define a cor do texto como #FFFFFF (branco) */
+    line-height: 1.5; /* Define a altura da linha como 1.5, criando um espaçamento adequado entre as linhas de texto */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body{
+  
+}
+
+.wrapper .header{
+	margin-bottom: 30px;
+}
+
+.wrapper .header h1{
+	font-weight: 1000;
+    font-size: 60px;
+	text-align: center;
+}
+
+.wrapper .box_wrapper{
+	display: flex;
+	justify-content: center;	
+}
+
+.wrapper .box_row{
+	display: flex;
+	justify-content: space-between;
+	width: 90%;	
+}
+
+.wrapper .box_row .box_col{
+	margin-right: 15px;
+	width: 400px;
+    height: 300px;
+	text-align: center;
+	padding: 25px;
+	border-radius: 15px;
+	box-shadow: 0 0 2px rgba(0,0,0,0.1);
+	color: #fff;
+}
+
+.wrapper .box_row .box_col:last-child{
+	margin-right: 0px;
+}
+
+.wrapper .box_row .box_col.box_col_1{
+	background: #6565d7;
+}
+
+.wrapper .box_row .box_col.box_col_2{
+	background: #ebca47;
+}
+
+.wrapper .box_row .box_col.box_col_3{
+	background: #ef485c;
+}
+
+.wrapper .box_row .box_col .box_title{
+	margin: 12px 0;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+@media screen and (max-width: 1024px) {
+	body{
+		padding: 50px 15px 0;
+	}
+	.wrapper .box_row{
+		width: 100%;	
+	}  
+}
+
+@media screen and (max-width: 767px) {
+	.wrapper .box_row{
+		flex-direction: column;
+	}
+	.wrapper .box_row .box_col{
+		width: 100%;
+		margin: 0;
+		margin-bottom: 15px;
+	}
+}
+
+
+.about{
+    background: url(imagens/RecycleMass-03.jpg) no-repeat left;
+    background-size: 55%;
+    overflow: hidden;
+    padding: 100px 0;
+}
+.inner-section{
+    width: 55%;
+    float: right;
+    background: white;
+    padding: 140px;
+    box-shadow: 10px 10px 8px rgba(0,0,0,0.3);
+}
+.inner-section h1{
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.text{
+    font-size: 17px;
+    color: #545454;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px;
+}
+.skills button{
+    font-size: 22px;
+    text-align: center;
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 20px;
+    padding: 8px;
+    width: 200px;
+    background-color: #00999c;
+    color: white;
+    cursor: pointer;
+}
+.skills button:hover{
+    transition: 1s;
+    background-color: #ecf5f5;
+    color: #00999c;
+}
+@media screen and (max-width:1200px){
+    .inner-section{
+        padding: 80px;
+    }
+}
+@media screen and (max-width:1000px){
+    .about{
+        background-size: 100%;
+        padding: 100px 40px;
+    }
+    .inner-section{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:600px){
+    .about{
+        padding: 0;
+    }
+    .inner-section{
+        padding: 60px;
+    }
+    .skills button{
+        font-size: 19px;
+        padding: 5px;
+        width: 160px;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  :root {
+    --purple: hsl(240, 80%, 89%);
+    --pink: hsl(0, 59%, 94%);
+    --light-bg: hsl(204, 37%, 92%);
+    --light-gray-bg: hsl(0, 0%, 94%);
+    --white: hsl(0, 0%, 100%);
+    --dark: hsl(0, 0%, 7%);
+    --text-gray: hsl(0, 0%, 30%);
+  }
+  
+  h3 {
+    font-size: 1.5em;
+    font-weight: 700;
+  }
+
+  
+  .description {
+    white-space: wrap;
+    font-size: 1em;
+    line-height: 1.7;
+    font-weight: 300;
+    color: var(--text-gray);
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .wrap {
+    display: flex;
+    justify: space-between;
+    align-items: stretch;
+    width: 100%;
+    gap: 24px;
+    padding: 24px;
+    flex-wrap: wrap;
+  }
+  
+  .box {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    position: center;
+    padding: 24px;
+    background: #eff3f3;
+  }
+  
+  .box-top {
+    display: flex;
+    flex-direction: column;
+    position: center;
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+  
+  .box-image {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    object-position: 50% 20%;
+    position:cen
+  }
+  
+  .title-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .box-title {
+    border-left: 3px solid var(--purple);
+    padding-left: 12px;
+  }
+  
+  .user-follow-info {
+    color: hsl(0, 0%, 60%);
+  }
+  
+  .button {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: auto;
+    padding: 16px;
+    color: #000;
+    background: transparent;
+    box-shadow: 0px 0px 0px 1px black inset;
+    transition: background 0.4s ease;
+  }
+  
+  .button:hover {
+    background: var(--purple);
+  }
+  
+  .fill-one {
+    background: var(--light-bg);
+  }
+  
+  .fill-two {
+    background: var(--pink);
+  }
+  
+  /* RESPONSIVE QUERIES */
+  
+  @media (min-width: 320px) {
+    .title-flex {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: start;
+    }
+    .user-follow-info {
+      margin-top: 6px;
+    }
+  }
+  
+  @media (min-width: 460px) {
+    .title-flex {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: start;
+    }
+    .user-follow-info {
+      margin-top: 6px;
+    }
+  }
+  
+  @media (min-width: 640px) {
+    .box {
+      flex-basis: calc(50% - 12px);
+    }
+    .title-flex {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: start;
+    }
+    .user-follow-info {
+      margin-top: 6px;
+    }
+  }
+  
+  @media (min-width: 840px) {
+    .title-flex {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: start;
+    }
+    .user-follow-info {
+      margin-top: 6px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .box {
+      flex-basis: calc(33.3% - 16px);
+    }
+    .title-flex {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: start;
+    }
+    .user-follow-info {
+      margin-top: 6px;
+    }
+  }
+  
+  @media (min-width: 1100px) {
+    .box {
+      flex-basis: calc(25% - 18px);
+    }
+  }
+ 
+
+
+body, html{
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	font-family: 'Sniglet', cursive;
+}
+
+
+/* Animation webkit */
+@-webkit-keyframes myfirst
+{
+	0% {margin-left: -235px}
+	90% {margin-left: 100%;}
+	100% {margin-left: 100%;}
+}
+
+/* Animation */
+@keyframes myfirst
+{
+	0% {margin-left: -235px}
+	70% {margin-left: 100%;}
+	100% {margin-left: 100%;}
+}
+
+.fish{
+	/* background-image: url('https://media.tenor.com/wyoZT-pl_3IAAAAC/monkey-waving.gif'); */
+	width: 235px;
+	height: 604px;
+	margin-left: -235px;
+	position: absolute;	
+	animation: myfirst 24s;
+	-webkit-animation: myfirst 24s;
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	-webkit-animation-timing-function: linear;
+}
+
+#fish{
+	top: 120px;
+}
+
+#fish2{
+	top: 260px;
+	animation-delay: 12s;
+	-webkit-animation-delay: 12s;
+}
+
+
+.texto{
+color:black;
+}
+
+#form{
+	height: 100%;	
+	background-color: #dad4d4;
+	overflow: hidden;
+	position: relative;
+	
+}
+form{
+	margin: 0 auto;
+	width: 500px;
+	padding-top: 40px;
+	color: rgb(68, 114, 49);
+	position: relative;
+	
+ 
+  }
+	
+
+
+
+label, input, textarea{
+	display: block;	
+}
+input, textarea{
+	width: 500px;	
+	border: none;
+	border-radius: 20px;
+	outline: none;
+	padding: 10px;
+	font-family: 'Sniglet', cursive;
+	font-size: 1em;
+	color: #f1f1f1;
+	transition: border 0.5s;
+	-webkit-transition: border 0.5s;
+	-moz-transition: border 0.5s;
+	-o-transition: border 0.5s;
+	border: solid 3px #dad4d4;	
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	
+}
+input:focus, textarea:focus{
+	border: solid 3px #77e0ab;	
+}
+
+textarea{
+	height: 100px;	
+	resize: none; 
+	overflow: auto;
+}
+input[type="submit"]{
+	background-color: rgb(35, 75, 38);
+	color: white;
+	height: 50px;
+	cursor: pointer;
+	margin-top: 30px;
+	font-size: 1.29em;
+	font-family: 'Sniglet', cursive;
+	-webkit-transition: background-color 0.5s;
+	-moz-transition: background-color 0.5s;
+	-o-transition: background-color 0.5s;
+	transition: background-color 0.5s;
+}
+input[type="submit"]:hover{
+	background-color: #7aa557;
+	
+}
+label{
+	font-size: 1.5em;
+	margin-top: 20px;
+	padding-left: 20px;
+}
+.formgroup, .formgroup-active, .formgroup-error{
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	background-size: 10.5%;
+	transition: background-image 0.7s;
+	-webkit-transition: background-image 0.7s;
+	-moz-transition: background-image 0.7s;
+	-o-transition: background-image 0.7s;
+	width: 566px;
+	padding-top: 2px;
+}
+
+.formgroup{
+	background-image: url('http://www.geertjanhendriks.nl/codepen/form/pixel.gif');	
+}
+
+.testimonials{
+  padding: 40px 0;
+  background: #f1f1f1;
+  color: #434343;
+  text-align: center;
+}
+.inner{
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+.border{
+  width: 160px;
+  height: 5px;
+  background: #6ab04c;
+  margin: 26px auto;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.col{
+  flex: 33.33%;
+  max-width: 33.33%;
+  box-sizing: border-box;
+  padding: 15px;
+}
+.testimonial{
+  background: #fff;
+  padding: 30px;
+}
+.testimonial img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.name{
+  font-size: 20px;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+.stars{
+  color: #6ab04c;
+  margin-bottom: 20px;
+}
+
+
+@media screen and (max-width:960px) {
+.col{
+  flex: 100%;
+  max-width: 80%;
+}
+}
+
+@media screen and (max-width:600px) {
+.col{
+  flex: 100%;
+  max-width: 100%;
+}
+}  
+
+/* Footer */
+
+main {
+  height: 80vh; /* Define a altura do elemento 'main' como 80% da altura da viewport */
+}
+
+:root {
+  --color-neutral-0: #0e0c0c; /* Define uma variável de cor chamada '--color-neutral-0' com o valor '#0e0c0c' */
+  --color-neutral-10: #171717; /* Define uma variável de cor chamada '--color-neutral-10' com o valor '#171717' */
+  --color-neutral-30: #a8a29e; /* Define uma variável de cor chamada '--color-neutral-30' com o valor '#a8a29e' */
+  --color-neutral-40: #f5f5f5; /* Define uma variável de cor chamada '--color-neutral-40' com o valor '#f5f5f5' */
+}
+
+footer {
+  width: 100%; /* Define a largura do elemento 'footer' como 100% */
+  color: var(--color-neutral-40); /* Define a cor do texto dentro do 'footer' como a cor da variável '--color-neutral-40' */
+}
+
+.footer-link {
+  text-decoration: none; /* Remove a decoração de texto dos elementos com a classe 'footer-link' */
+}
+
+#footer_content {
+  background-color: var(--color-neutral-10); /* Define a cor de fundo do elemento com o ID 'footer_content' como a cor da variável '--color-neutral-10' */
+  display: grid; /* Aplica um layout de grid ao elemento 'footer_content' */
+  grid-template-columns: repeat(4, 1fr); /* Define a estrutura das colunas do grid do 'footer_content' */
+  padding: 3rem 3.5rem; /* Define o preenchimento interno do 'footer_content' */
+}
+
+#footer_contacts h1 {
+  margin-bottom: 0.75rem; /* Define uma margem inferior de 0.75rem para o elemento 'h1' dentro de 'footer_contacts' */
+}
+
+#footer_social_media {
+  display: flex; /* Aplica um layout flexível ao elemento 'footer_social_media' */
+  gap: 2rem; /* Define o espaçamento entre os elementos filhos de 'footer_social_media' */
+  margin-top: 1.5rem; /* Define uma margem superior de 1.5rem para o elemento 'footer_social_media' */
+}
+
+
+#footer_social_media .footer-link {
+  display: flex; /* Aplica um layout flexível aos elementos com a classe 'footer-link' dentro de '#footer_social_media' */
+  align-items: center; /* Centraliza verticalmente os elementos */
+  justify-content: center; /* Centraliza horizontalmente os elementos */
+  height: 2.5rem; /* Define a altura dos elementos como 2.5rem */
+  width: 2.5rem; /* Define a largura dos elementos como 2.5rem */
+  color: var(--color-neutral-40); /* Define a cor dos textos dentro dos elementos como a cor da variável '--color-neutral-40' */
+  border-radius: 50%; /* Aplica um raio de borda arredondado aos elementos */
+  transition: all 0.4s; /* Define uma transição de 0.4s para todas as propriedades */
+}
+
+#footer_social_media .footer-link i {
+  font-size: 1.25rem; /* Define o tamanho da fonte para 1.25rem para os elementos 'i' dentro de '.footer-link' */
+}
+
+#footer_social_media .footer-link:hover {
+  opacity: 0.8; /* Define a opacidade dos elementos quando hover como 0.8 */
+}
+
+#instagram {
+  background: linear-gradient(#7f37c9, #ff2992, #ff9807); /* Define um gradiente de fundo para o elemento com o ID 'instagram' */
+}
+
+#facebook {
+  background-color: #4267b3; /* Define a cor de fundo para o elemento com o ID 'facebook' */
+}
+
+#whatsapp {
+  background-color: #25d366; /* Define a cor de fundo para o elemento com o ID 'whatsapp' */
+}
+
+.footer-list {
+  display: flex; /* Aplica um layout flexível aos elementos com a classe 'footer-list' */
+  flex-direction: column; /* Define a direção da coluna para os elementos */
+  gap: 0.75rem; /* Define o espaçamento entre os elementos filhos */
+  list-style: none; /* Remove os estilos de lista dos elementos */
+}
+
+.footer-list .footer-link {
+  color: var(--color-neutral-30); /* Define a cor do texto dos elementos '.footer-link' dentro de '.footer-list' como a cor da variável '--color-neutral-30' */
+  transition: all 0.4s; /* Define uma transição de 0.4s para todas as propriedades */
+}
+
+.footer-list .footer-link:hover {
+  color: #7f37c9; /* Define a cor do texto dos elementos '.footer-link' dentro de '.footer-list' quando hover como '#7f37c9' */
+}
+
+#footer_subscribe {
+  display: flex; /* Aplica um layout flexível ao elemento com o ID 'footer_subscribe' */
+  flex-direction: column; /* Define a direção da coluna para os elementos */
+  gap: 1.5rem; /* Define o espaçamento entre os elementos filhos */
+}
+
+#footer_subscribe p {
+  color: var(--color-neutral-30); /* Define a cor do texto dos elementos 'p' dentro de '#footer_subscribe' como a cor da variável '--color-neutral-30' */
+}
+
+
+#input_group {
+  display: flex; /* Aplica um layout flexível aos elementos com o ID 'input_group' */
+  align-items: center; /* Centraliza verticalmente os elementos */
+  background-color: var(--color-neutral-0); /* Define a cor de fundo como a cor da variável '--color-neutral-0' */
+  border-radius: 4px; /* Aplica um raio de borda arredondado de 4px */
+}
+
+#input_group input {
+  all: unset; /* Remove todos os estilos padrão do elemento */
+  padding: 0.75rem; /* Define o preenchimento interno de 0.75rem */
+  width: 100%; /* Define a largura do elemento como 100% */
+}
+
+#input_group button {
+  background-color: #7f37c9; /* Define a cor de fundo como '#7f37c9' */
+  border: none; /* Remove a borda */
+  color: var(--color-neutral-40); /* Define a cor do texto como a cor da variável '--color-neutral-40' */
+  padding: 0px 1.25rem; /* Define o preenchimento interno horizontal */
+  font-size: 1.125rem; /* Define o tamanho da fonte como 1.125rem */
+  height: 100%; /* Define a altura do elemento como 100% */
+  border-radius: 0px 4px 4px 0px; /* Aplica um raio de borda arredondado nas extremidades */
+  cursor: pointer; /* Altera o cursor para um ponteiro ao passar por cima */
+  transition: all 0.4s; /* Define uma transição de 0.4s para todas as propriedades */
+}
+
+#input_group button:hover {
+  opacity: 0.8; /* Define a opacidade do elemento quando hover como 0.8 */
+}
+
+#footer_copyright {
+  display: flex; /* Aplica um layout flexível ao elemento */
+  justify-content: center; /* Centraliza horizontalmente os elementos */
+  background-color: var(--color-neutral-0); /* Define a cor de fundo como a cor da variável '--color-neutral-0' */
+  font-size: 0.9rem; /* Define o tamanho da fonte como 0.9rem */
+  padding: 1.5rem; /* Define o preenchimento interno */
+  font-weight: 100; /* Define a espessura da fonte como 100 */
+}
+
+@media screen and (max-width: 768px) {
+  #footer_content {
+      grid-template-columns: repeat(2, 1fr); /* Define a estrutura da grade com 2 colunas */
+      gap: 2rem; /* Define o espaçamento entre as colunas */
+  }
+}
+
+@media screen and (max-width: 426px) {
+  #footer_content {
+      grid-template-columns: repeat(1, 1fr); /* Define a estrutura da grade com 1 coluna */
+      padding: 3rem 2rem; /* Define o preenchimento interno */
+  }
+}
+
+.btn {
+  padding: 15px 45px; /* Define o preenchimento interno */
+  border: 1px solid #fff; /* Define uma borda de 1px sólida com cor branca */
+  border-radius: 0.5em; /* Aplica um raio de borda arredondado de 0.5em */
+  display: inline-block; /* Define o elemento como um bloco inline */
+  margin-top: em; /* Define a margem superior */
+  background-color: gray; /* Define a cor de fundo como cinza */
+  font-weight: 700; /* Define a espessura da fonte como 700 */
+  transition: .3s; /* Define uma transição de 0.3s para todas as propriedades */
+}
+
+.btn:hover {
+  background-color: gray; /* Define a cor de fundo quando hover como cinza */
+  color: #222; /* Define a cor do texto quando hover como '#222' */
+}
+
